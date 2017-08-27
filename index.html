@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<title>Withdraw crypto calculator</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">Poloniex Withdrawal Calculator</h1>
+		<div class="form-group input-dollars-form-group">
+			<label>Withdrawal amount in dollars</label>
+			<div class="input-group">
+				<span class="input-group-addon"> $ </span> 
+				<input id="withdrawLimit"
+					class="form-control" type="text" pattern="[0-9.,]+" value="25000">
+				<span id="span2k" class="input-group-addon"></span> 
+				<span id="span25k" class="input-group-addon">$ 25,000.00</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Select cryptocurrency</label> <select id="currencies"
+				class="form-control">
+				<option value="USDT_BTC">BTC</option>
+			</select>
+		</div>
+		<div id="resultHolder">
+			<div class="form-group">
+				<label>Result in selected cryptocurrency:</label>
+				<div class="input-group">
+					<span class="input-group-addon selectedCrypto"></span> <input
+						id="withdrawOutcome" class="form-control" type="text" pattern="[0-9.,]+"> <span
+						class="input-group-addon" id="refreshCalculationBtn"> <span
+						class="fa fa-refresh"></span>
+					</span>
+				</div>
+			</div>
+			<strong>Last data retrieved on: </strong><br>
+			<span id="dateRetrieved"></span> <br> 1 <span id="cryptoCalculated"></span>
+		</div>
+		<div class="form-group">
+			<hr class="hr" />
+			<p class="text-info text-center">
+				This calculator is designed to quickly indicate how many cryptocoins
+				can be withdrawn from Poloniex. The exchange rates are downloaded
+				straight from Poloniex everytime a calculation is done. <br>
+				Code will be available on GitHub soon.
+			</p>
+		</div>
+		<hr class="hr" />
+		<p class="text-muted">
+			<strong>Donations</strong><br>
+			<strong>BTC: </strong>1Ck2X82xAMTijA8SdYUBzeiYW2jeFbGVMS <br> 
+			<strong>LTC: </strong>LUALcMEezEiQp2j5fapTW7Jf77U1AukVHa <br> 
+			<strong>ETC: </strong>0xf77326e77d77f95983063403f976bbb3fa1ddbbb
+		</p>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.5.0/cldr.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.5.0/cldr/event.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.5.0/cldr/supplemental.min.js"></script>
+	<script>
+	// Embedded (hard-coded) CLDR JSON data.
+	Cldr.load({
+	  supplemental: {
+	    likelySubtags: {
+	    }
+	  }
+	});
+	</script>	-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.3.0/globalize-runtime.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.3.0/globalize-runtime/number.min.js"></script>
+	<script src="scripts/custom/index.js"></script>
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+				'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-101971702-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</body>
+</html>
