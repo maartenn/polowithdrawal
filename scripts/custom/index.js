@@ -86,7 +86,7 @@ $(function () {
         // set value in btc
         if ($("#currencies").val() !== "USDT_BTC") {
             extraInfo += " = ";
-            extraInfo += (data[$("#currencies").val()].last).toLocaleString(undefined, { maximumFractionDigits: 6 });
+            extraInfo += parseFloat(data[$("#currencies").val()].last).toLocaleString((navigator.language ||navigator.browserLanguage), { maximumFractionDigits: 8 });
             extraInfo += " BTC = $ ";
             extraInfo += (data[$("#currencies").val()].last * data.USDT_BTC.last)
                     .toLocaleString();
